@@ -1,13 +1,13 @@
 const app = new Vue ({
     el:"#app",
     data:{
+        error: false,
         newTask: "",
         tasks: [
             'Fare la spesa',
             'Pagare bollette',
             'Andare dal dottore',
         ],
-        error: false
     },
     methods: {
         removeTask(i){
