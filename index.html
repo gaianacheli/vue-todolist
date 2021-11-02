@@ -9,6 +9,11 @@
 </head>
 <body>
     <div id="app">
+
+        <div class="addTask">
+            <input type="text" v-model="newTask">
+            <button @click="addTask()">Aggiungi</button>
+        </div>
         <div class="tasks" v-if="tasks.length > 0">
             <div class="item" v-for="(task, index) in tasks">{{task}} 
                 <div class="deleteTask">
