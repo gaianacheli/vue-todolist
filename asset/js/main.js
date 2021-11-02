@@ -28,9 +28,17 @@ const app = new Vue ({
             this.newTask= ""
         },
        taskComplete(task, index){
-           this.completed.push(task, index)
-           this.tasks.splice(task,1)    
+           this.completed.push(task, index);
+           this.tasks.splice(task,1) ;  
            
+       },
+       resumeTask(task,index){
+           this.completed.splice(task,1)
+          this.tasks.push(task, index) 
+       },
+       taskTrashed(task,index){
+           this.trashed.splice(task,1)
        }
+       
     }
 })

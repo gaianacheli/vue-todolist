@@ -40,7 +40,7 @@
                     <div class="tasks">
                         <div class="item" v-for="(task, index) in completed">{{task}}
                             <div class="resume">
-
+                                <i class="fas fa-redo" @click="resumeTask(task)"></i>
                             </div>
 
 
@@ -51,7 +51,8 @@
                     <h2>Trashed</h2>
                     <div class="tasks">
                         <div class="item" v-for="(task, index) in trashed">{{task}}
-
+                             <i class="fas fa-trash-restore" @click="taskTrashed(task)"></i>
+            
                         </div>
                     </div>
                 </div>

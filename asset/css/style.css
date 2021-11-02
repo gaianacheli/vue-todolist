@@ -71,3 +71,6 @@ body {
 .trashed {
     width: 250px;
 }
+.fa-check-circle {
+    color: rgb(48, 75, 48);
+}
