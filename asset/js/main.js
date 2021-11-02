@@ -5,7 +5,12 @@ const app = new Vue ({
             'Fare la spesa',
             'Pagare bollette',
             'Andare dal dottore',
-
         ]
+    },
+    methods: {
+        removeTask(i){
+           // console.log('rimosso',i);
+            this.tasks.splice(i,1)
+        }
     }
 })

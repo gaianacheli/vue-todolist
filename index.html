@@ -10,8 +10,11 @@
 <body>
     <div id="app">
         <div class="tasks">
-            <div class="item" v-for="task in tasks">{{task}} 
-                <i class="fas fa-times"></i>
+            <div class="item" v-for="(task, index) in tasks">{{task}} 
+                <div class="deleteTask">
+                     <i class="fas fa-times" @click="removeTask(index)"></i>  
+                </div>
+             
             </div>
            
 
