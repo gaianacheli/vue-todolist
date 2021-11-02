@@ -6,7 +6,8 @@ const app = new Vue ({
             'Fare la spesa',
             'Pagare bollette',
             'Andare dal dottore',
-        ]
+        ],
+        error: false
     },
     methods: {
         removeTask(i){
@@ -16,6 +17,9 @@ const app = new Vue ({
         addTask(){
             if(this.newTask.length > 5){
                 this.tasks.push(this.newTask)
+                this.error= false
+            }else {
+                this.error= true
             }
             this.newTask= ""
         }

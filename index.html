@@ -13,6 +13,7 @@
         <div class="addTask">
             <input type="text" v-model="newTask">
             <button @click="addTask()">Aggiungi</button>
+            <div class="error" v-show="error">Devi inserire una task!</div>
         </div>
         <div class="tasks" v-if="tasks.length > 0">
             <div class="item" v-for="(task, index) in tasks">{{task}} 
