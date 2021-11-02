@@ -14,24 +14,52 @@
     <div id="app">
         <div class="cointainer">
             <h1 class="title">To Do List</h1>
-            <div class="list"  v-if="tasks.length > 0">
-               <div class="addTask">
-                    <input class="input" type="text" v-model="newTask" v-on:keyup.enter="addTask">
-                    <button class="btnAdd" @click="addTask()" >Aggiungi</button>
-                    <div class="error" v-show="error">Devi inserire una task!</div>
-                </div>
+            <div class="addTask" v-if="tasks.length > 0">
+                <input class="input" type="text" v-model="newTask" v-on:keyup.enter="addTask">
+                <button class="btnAdd" @click="addTask()" >Aggiungi</button>
+                <div class="error" v-show="error">Devi inserire una task!</div>
+            </div>
+            <div v-else>
+                <p class="text">Nulla da fare! Buona giornata!</p>
+            </div>
+            <div class="list">
+                <div class="edit">
+                <h2>To Do List</h2>
                 <div class="tasks">
                     <div class="item" v-for="(task, index) in tasks">{{task}} 
                         <div class="deleteTask">
-                            <i class="fas fa-times" @click="removeTask(index)"></i>  
+                            <i class="far fa-edit"></i>
+                            <i class="far fa-check-circle" @click="taskComplete(task)"></i>
+                            <i class="fas fa-times" @click="removeTask(task)"></i>  
                         </div>
                      </div>
                </div>
+                </div>
+                <div class="completed">
+                    <h2>Completed</h2>
+                    <div class="tasks">
+                        <div class="item" v-for="(task, index) in completed">{{task}}
+                            <div class="resume">
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="trashed">
+                    <h2>Trashed</h2>
+                    <div class="tasks">
+                        <div class="item" v-for="(task, index) in trashed">{{task}}
+
+                        </div>
+                    </div>
+                </div>
+              
             </div>
-        <div class="list" v-else>
-            <p class="text">Nulla da fare! Buona giornata!</p>
-        </div>
-    </div>
+        
+            
+       </div>
         </div>
 
        

@@ -8,11 +8,15 @@ const app = new Vue ({
             'Pagare bollette',
             'Andare dal dottore',
         ],
+        completed:[],
+        trashed: [],
+
+
     },
     methods: {
-        removeTask(i){
-           // console.log('rimosso',i);
-            this.tasks.splice(i,1)
+        removeTask(task, index){
+           this.trashed.push(task, index)
+            this.tasks.splice(index,1)
         },
         addTask(){
             if(this.newTask.length > 5){
@@ -22,6 +26,11 @@ const app = new Vue ({
                 this.error= true
             }
             this.newTask= ""
-        }
+        },
+       taskComplete(task, index){
+           this.completed.push(task, index)
+           this.tasks.splice(task,1)    
+           
+       }
     }
 })

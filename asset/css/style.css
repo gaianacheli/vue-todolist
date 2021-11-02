@@ -9,9 +9,6 @@ body {
 }
 .cointainer {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     margin-top: 5rem;
     
 }
@@ -19,12 +16,12 @@ body {
     font-size: 50px;
     margin-bottom: 3rem;
     color: rgb(124, 81, 1);
+    text-align: center;
 }
-.list {
-    width: 600px;
+.edit, .completed, .trashed{
+    width: 510px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     padding: 2rem;
     border-radius: 10px;
     background-color: rgb(192, 147, 147);
@@ -35,13 +32,20 @@ body {
     padding: 1rem;
 }
 .addTask {
-    width: 600px;
+    width: 100%;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
     
+}
+.input {
+    padding: 10px;
 }
 .input,.btnAdd{
     width: 340px;
     height: 26px;
     border-radius: 20px;
+    margin-left: 20px;
 }
 .btnAdd{
     width: 200px;
@@ -52,4 +56,18 @@ body {
 }
 .fas, .error, .text{
     color: rgb(105, 0, 0);
+}
+.text {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.completed{
+    width: 250px;
+}
+.list {
+    display: flex;
+    justify-content: space-around;
+}
+.trashed {
+    width: 250px;
 }
