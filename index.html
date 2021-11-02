@@ -11,8 +11,8 @@
     <div id="app">
 
         <div class="addTask">
-            <input type="text" v-model="newTask">
-            <button @click="addTask()">Aggiungi</button>
+            <input type="text" v-model="newTask" v-on:keyup.enter="addTask">
+            <button @click="addTask()" >Aggiungi</button>
             <div class="error" v-show="error">Devi inserire una task!</div>
         </div>
         <div class="tasks" v-if="tasks.length > 0">
